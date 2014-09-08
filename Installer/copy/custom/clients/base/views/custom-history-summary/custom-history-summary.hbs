@@ -1,0 +1,82 @@
+{{#if historySummary}}
+    <div class="main-pane span12" style="margin-left:0px; background-color:white;">
+        <div>
+            <div>
+                <div class="headerpane" style="vertical-align:middle">
+                    <h1>
+                        <span class="record-cell" data-type="avatar" data-name="picture">
+                            <span class="index" data-fieldname="picture" data-index="">
+                                <span class="detail">
+                                    <table style="width:100%">
+                                    <tr>
+                                        <td style="width:1%">
+                                            {{#if historySummary.module_key}}
+                                                <span class="label label-module label-module-lg label-{{historySummary.module_key}}" rel="tooltip" title="" data-placement="right" data-original-title="{{historySummary.module_key}}" tabindex="-1">
+                                                    {{moduleIconLabel historySummary.module_key}}
+                                                </span>
+                                            {{/if}}
+                                        </td>
+                                        <td style="width:89%">
+                                            &nbsp;<small>{{str "LBL_HISTORICAL_SUMMARY"}}</small>
+                                            <br/>
+                                            &nbsp;{{historySummary.name}}
+                                        </td>
+                                        <td style="width:10%; text-align:right; padding-right:10px;">
+                                            <a id="historyCloseButton" class="rowaction btn btn-primary" href="javascript:void(0);" onclick="App.drawer.close();" name="historyCloseButton">Close</a>
+                                        </td>
+                                    </tr>
+                                    </table>
+                                </span>
+                            </span>
+                        </span>
+                    </h1>
+                </div>
+
+                <div class="record" style="padding: 1px 0px 0px 0px;">
+                    <table class="table table-striped">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            {{#each historySummary.history}}
+                              <tr style="vertical-align:middle">
+                                <td>
+                                    <span class="label label-module {{labelSizeClass}}label-{{module}} label-module-sm" style="vertical-align:middle" rel="tooltip" title="{{moduleIconToolTip module}}" data-placement="right">
+                                        {{moduleIconLabel module}}
+                                    </span>
+                                    {{name}}
+                                </td>
+                                <td>
+                                    {{#if status}}
+                                        <i class="icon-check" rel="tooltip" data-title="{{str "LBL_STATUS"}}" data-placement="left"></i>&nbsp;&nbsp;{{status}}
+                                    {{/if}}
+                                </td>
+                                <td>
+                                    {{#if contact_id}}
+                                        <i class="icon-user" rel="tooltip" data-title="{{str "LBL_CONTACT"}}" data-placement="left"></i>&nbsp;&nbsp;<a href="#Contacts/{{contact_id}}" target="_blank">{{contact_name}}</a>
+                                    {{/if}}
+                                </td>
+                                <td>
+                                    {{#if filename}}
+                                        <i class="icon-download-alt" rel="tooltip" data-title="{{str "LBL_FILENAME"}}" data-placement="left"></i>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="App.api.fileDownload(App.api.buildURL('{{module}}/{{id}}/file/filename?force_download=1&platform=base'), {error: function(data) {App.error.handleHttpError(data, {});}});" data-original-title="{{filename}}">{{filename}}</a>
+                                    {{/if}}
+                                </td>
+                                <td>
+                                    {{#if date_modified}}
+                                        <i class="icon-calendar" rel="tooltip" data-title="{{str "LBL_DATE"}}" data-placement="left"></i>&nbsp;&nbsp;{{date_modified}}
+                                    {{/if}}
+                                </td>
+                                <td>&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td colspan="5">
+                                    {{{description}}}
+                                <td>
+                              </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}

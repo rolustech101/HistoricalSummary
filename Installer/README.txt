@@ -1,0 +1,1 @@
+This package will install a new view overtop of the stock historical summary. Upon installation/uninstallation, a Quick Repair and Rebuild will automatically be run.
