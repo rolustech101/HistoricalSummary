@@ -1,7 +1,8 @@
 HistoricalSummary
 =================
+This is a module loadable plugin for use with SugarCRM.
 
-An activity history view for Sugar7+ that mimics the 6.x history popup.
+An activity history view for Sugar7+ that mimics the 6.x history popup. The 'Installer' directory contains the files for the actual installer zip. To create an installer, you will need to zip the contents of this directory excluding the base 'InstallerPackage' directory.
 
 Links
 =================
