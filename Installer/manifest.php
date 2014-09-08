@@ -55,8 +55,13 @@ $installdefs = array (
     ),
     2 => 
     array (
-      'from' => '<basepath>/copy/custom/clients/base/views/custom-history-summary/',
-      'to' => 'custom/clients/base/views/custom-history-summary/',
+      'from' => '<basepath>/copy/custom/clients/base/views/custom-history-summary/custom-history-summary.hbs',
+      'to' => 'custom/clients/base/views/custom-history-summary/custom-history-summary.hbs',
+    ),
+    3 => 
+    array (
+      'from' => '<basepath>/copy/custom/clients/base/views/custom-history-summary/custom-history-summary.js',
+      'to' => 'custom/clients/base/views/custom-history-summary/custom-history-summary.js',
     ),
   ),
   'post_execute' => 
