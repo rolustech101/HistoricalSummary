@@ -392,6 +392,11 @@ class CustomHistorySummaryAPI extends SugarApi
         return $response;
     }
 
+    /**
+     * populate the email details
+     * @param $email
+     * @return string
+     */
     function getEmailDetails($email){
         $details = "";
 
@@ -416,6 +421,11 @@ class CustomHistorySummaryAPI extends SugarApi
         return $details;
     }
 
+    /**
+     * populate the task details
+     * @param $task
+     * @return string
+     */
     private function getTaskDetails($task){
         global $app_strings;
 
@@ -429,6 +439,11 @@ class CustomHistorySummaryAPI extends SugarApi
         return $details;
     }
 
+    /**
+     * Format the activity description
+     * @param $description
+     * @return string
+     */
     private function formatDescription($description){
 
         //handle worklog fields
@@ -437,7 +452,10 @@ class CustomHistorySummaryAPI extends SugarApi
             $description = SugarFieldWorklogHelpers::decodeJsonValue($description);
         }
 
-        return nl2br($description);
+        $description = htmlspecialchars($description, ENT_QUOTES);
+        $description = nl2br($description);
+
+        return $description;
     }
 }
 

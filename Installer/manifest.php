@@ -5,7 +5,6 @@ $manifest = array (
   array (
     'exact_matches' => 
     array (
-      0 => '7.2.2.0',
       1 => '7.5.0.0beta1',
       2 => '7.5.0.0beta2',
       3 => '7.5.0.0beta3',
@@ -14,17 +13,18 @@ $manifest = array (
       6 => '7.5.0.0RC2',
     ),
     'regex_matches' => array (
-      0 => '7\\.5\\.(.*?)\\.(.*?)', 
-      1 => '7\\.6\\.(.*?)\\.(.*?)'
+      0 => '7\\.2\\.2\\.(.*?)', 
+      1 => '7\\.5\\.(.*?)\\.(.*?)', 
+      2 => '7\\.6\\.(.*?)\\.(.*?)'
     ),
-    
   ),
   'acceptable_sugar_flavors' => 
   array (
-    0 => 'PRO',
-    1 => 'CORP',
-    2 => 'ENT',
-    3 => 'ULT',
+    0 => 'CE',
+    1 => 'PRO',
+    2 => 'CORP',
+    3 => 'ENT',
+    4 => 'ULT',
   ),
   'readme' => 'README.txt',
   'key' => 1410195817,
@@ -33,9 +33,9 @@ $manifest = array (
   'icon' => '',
   'is_uninstallable' => true,
   'name' => 'Historical Summary',
-  'published_date' => '2014-09-08 17:03:37',
+  'published_date' => '2014-09-15 12:30:22',
   'type' => 'module',
-  'version' => '1.0',
+  'version' => '1.1',
   'remove_tables' => '',
 );
 
